@@ -5,10 +5,12 @@
 </head>
 <body>
     <h1>Login</h1>
-    <form action="pagina_secreta.html" method="get">
-        Usuario: <input type="text" id="usuario" name="usuario"><br>
-        Contraseña: <input type="password" id="contrasena" name="contrasena"><br>
-        <input type="submit" value="Ingresar">
+    <form>
+        Usuario: <input type="text" id="usuario"><br>
+        Contraseña: <input type="password" id="contrasena"><br>
+        <input type="button" value="Ingresar" onclick="verificarCredenciales()">
     </form>
+
+    <script src="login.js"></script>
 </body>
 </html>
