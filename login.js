@@ -4,7 +4,7 @@ function verificarCredenciales() {
 
     if (usuario === "sena" && contrasena === "Practica") {
         alert("¡Ingreso exitoso!");
-        window.location.href = "pagina_secreta.html"; 
+        window.location.replace("pagina_secreta.html"); 
     } else {
         alert("Usuario y/o contraseña incorrectos. Intenta de nuevo.");
     }
