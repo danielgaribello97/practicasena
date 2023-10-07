@@ -4,7 +4,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     var usuario = document.getElementById('usuario').value;
     var contrasena = document.getElementById('contrasena').value;
 
-    if (usuario === 'tu_usuario' && contrasena === 'tu_contrasena') {
+    if (usuario === 'sena' && contrasena === 'Practica') {
         alert('¡Inicio de sesión exitoso!');
     } else {
         alert('Credenciales incorrectas. Por favor, intenta de nuevo.');
