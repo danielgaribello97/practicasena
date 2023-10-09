@@ -22,11 +22,15 @@
     <form>
         Usuario: <input type="text" id="usuario"><br>
         Contraseña: <input type="password" id="contrasena"><br>
+        <label for="contrasena_admin">Contraseña de Administrador:</label>
+        <input type="password" id="contrasena_admin"><br>
         <input type="button" value="Ingresar" onclick="verificarCredenciales()">
         <input type="button" value="Registrar Nuevo Usuario" onclick="registrarUsuario()">
+        <input type="button" value="Eliminar Usuario" onclick="verificarContrasenaAdmin()">
     </form>
 
     <script src="login.js"></script>
     <script src="control_acceso.js"></script>
 </body>
 </html>
+
