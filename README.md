@@ -1,6 +1,6 @@
 
 <button onclick="window.location.href='login.html'">Iniciar Sesión</button>
-<!DOCTYPE html>
+
 <html>
 <head>
     <title>Login</title>
