@@ -21,3 +21,10 @@ function verificarCredenciales() {
         alert("Usuario y/o contraseña incorrectos. Intenta de nuevo.");
     }
 }
+
+function registrarUsuario() {
+    var nuevoUsuario = prompt("Ingresa un nombre de usuario:");
+    var nuevaContrasena = prompt("Ingresa una contraseña:");
+
+    if (nuevoUsuario && nuevaContrasena) {
+        var usuariosRegistrados =
