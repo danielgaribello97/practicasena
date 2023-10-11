@@ -9,12 +9,9 @@ function verificarCredenciales() {
     });
 
     if (usuarioValido) {
-        var codigoVerificacion = generarCodigoVerificacion();
-        enviarCodigoAlCorreo(codigoVerificacion); // Esta función enviará el código al correo del administrador.
-
         var codigoIngresado = prompt("Se ha enviado un código de verificación al correo del administrador. Ingresa el código:");
 
-        if (codigoIngresado === codigoVerificacion) {
+        if (codigoIngresado === "6473") {
             alert("¡Ingreso exitoso!");
             window.location.replace("pagina_secreta.html");
         } else {
@@ -25,11 +22,23 @@ function verificarCredenciales() {
     }
 }
 
-function generarCodigoVerificacion() {
-    return Math.floor(100000 + Math.random() * 900000); // Genera un código de 6 dígitos.
-}
+function registrarNuevoUsuario() {
+    var nuevoUsuario = prompt("Ingresa un nombre de usuario:");
+    var nuevaContrasena = prompt("Ingresa una contraseña:");
 
-function enviarCodigoAlCorreo(codigo) {
-    // Aquí se simula el envío de un correo electrónico al administrador.
-    console.log("Se ha enviado el código de verificación al correo del administrador: " + codigo);
+    if (nuevoUsuario && nuevaContrasena) {
+        var usuariosRegistrados = JSON.parse(localStorage.getItem('usuarios')) || [];
+
+        var nuevoUsuarioObj = {
+            usuario: nuevoUsuario,
+            contrasena: nuevaContrasena
+        };
+
+        usuariosRegistrados.push(nuevoUsuarioObj);
+        localStorage.setItem('usuarios', JSON.stringify(usuariosRegistrados));
+
+        alert("Usuario registrado exitosamente. Puedes iniciar sesión ahora.");
+    } else {
+        alert("No se pudo registrar el usuario. Asegúrate de proporcionar un nombre de usuario y una contraseña.");
+    }
 }
