@@ -4,7 +4,7 @@
     <title>Registro de Nuevo Usuario</title>
     <style>
         body {
-            background-image: url('fondo1.jpg');
+            background-image: url('fondo.jpg'); /* Cambiado a fondo de página secreta */
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
@@ -23,6 +23,7 @@
         Usuario: <input type="text" id="usuario_registro"><br>
         Contraseña: <input type="password" id="contrasena_registro"><br>
         <input type="button" value="Registrar" onclick="registrarNuevoUsuario()">
+        <input type="button" value="Volver al Login" onclick="window.location.href='login.html'"> <!-- Botón para volver al Login -->
     </form>
 
     <script src="registro.js"></script>
