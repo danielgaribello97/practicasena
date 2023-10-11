@@ -21,24 +21,3 @@ function verificarCredenciales() {
         alert("Usuario y/o contraseña incorrectos. Intenta de nuevo.");
     }
 }
-
-function registrarNuevoUsuario() {
-    var nuevoUsuario = prompt("Ingresa un nombre de usuario:");
-    var nuevaContrasena = prompt("Ingresa una contraseña:");
-
-    if (nuevoUsuario && nuevaContrasena) {
-        var usuariosRegistrados = JSON.parse(localStorage.getItem('usuarios')) || [];
-
-        var nuevoUsuarioObj = {
-            usuario: nuevoUsuario,
-            contrasena: nuevaContrasena
-        };
-
-        usuariosRegistrados.push(nuevoUsuarioObj);
-        localStorage.setItem('usuarios', JSON.stringify(usuariosRegistrados));
-
-        alert("Usuario registrado exitosamente. Puedes iniciar sesión ahora.");
-    } else {
-        alert("No se pudo registrar el usuario. Asegúrate de proporcionar un nombre de usuario y una contraseña.");
-    }
-}
