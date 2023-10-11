@@ -14,6 +14,7 @@ function registrarNuevoUsuario() {
         localStorage.setItem('usuarios', JSON.stringify(usuariosRegistrados));
 
         alert("Usuario registrado exitosamente. Puedes iniciar sesión ahora.");
+        window.location.href='login.html'; // Redirige de nuevo a la página de login
     } else {
         alert("No se pudo registrar el usuario. Asegúrate de proporcionar un nombre de usuario y una contraseña.");
     }
