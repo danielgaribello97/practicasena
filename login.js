@@ -11,7 +11,7 @@ function verificarCredenciales() {
     if (usuarioValido) {
         var codigoIngresado = prompt("Se ha enviado un código de verificación al correo del administrador. Ingresa el código:");
 
-        if (codigoIngresado === "6473") {
+        if (codigoIngresado === "6473","6501") {
             alert("¡Ingreso exitoso!");
             window.location.replace("pagina_secreta.html");
         } else {
