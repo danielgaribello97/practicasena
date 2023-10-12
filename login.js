@@ -23,6 +23,18 @@ function verificarCredenciales() {
     }
 }
 
+function verificarAutenticacion() {
+    if (sessionStorage.getItem('autenticado') === 'true') {
+        window.location.replace("pagina_secreta.html");
+    }
+}
+
+function cerrarSesion() {
+    sessionStorage.removeItem('autenticado');
+    alert("Sesión cerrada. Debes iniciar sesión nuevamente para acceder.");
+    window.location.replace("login.html");
+}
+
 function registrarUsuario() {
     var nuevoUsuario = prompt("Ingresa un nombre de usuario:");
     var nuevaContrasena = prompt("Ingresa una contraseña:");
@@ -73,17 +85,4 @@ function eliminarUsuario() {
     } else {
         alert("No se proporcionó un nombre de usuario.");
     }
-}
-
-function verificarAutenticacion() {
-    if (sessionStorage.getItem('autenticado') !== 'true') {
-        alert("Debes iniciar sesión para acceder a esta página.");
-        window.location.replace("login.html");
-    }
-}
-
-function cerrarSesion() {
-    sessionStorage.removeItem('autenticado');
-    alert("Sesión cerrada. Debes iniciar sesión nuevamente para acceder.");
-    window.location.replace("login.html");
 }
