@@ -13,6 +13,7 @@ function verificarCredenciales() {
 
         if (codigoIngresado === "6473") {
             alert("¡Ingreso exitoso!");
+            sessionStorage.setItem('autenticado', 'true'); // Usamos sessionStorage para mantener la autenticación en la sesión actual
             window.location.replace("pagina_secreta.html");
         } else {
             alert("Código de verificación incorrecto. Intenta de nuevo.");
@@ -44,7 +45,7 @@ function registrarUsuario() {
 }
 
 function verificarContrasenaAdmin() {
-    var contrasenaAdmin = document.getElementById("contrasena_admin").value;
+    var contrasenaAdmin = prompt("Ingresa la contraseña de administrador:");
 
     if (contrasenaAdmin === "D8n456to") {
         eliminarUsuario();
@@ -72,4 +73,17 @@ function eliminarUsuario() {
     } else {
         alert("No se proporcionó un nombre de usuario.");
     }
+}
+
+function verificarAutenticacion() {
+    if (sessionStorage.getItem('autenticado') !== 'true') {
+        alert("Debes iniciar sesión para acceder a esta página.");
+        window.location.replace("login.html");
+    }
+}
+
+function cerrarSesion() {
+    sessionStorage.removeItem('autenticado');
+    alert("Sesión cerrada. Debes iniciar sesión nuevamente para acceder.");
+    window.location.replace("login.html");
 }
