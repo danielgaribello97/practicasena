@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login</title>
+    <title>Iniciar Sesión</title>
     <style>
         body {
             background-image: url('fondo.jpg');
@@ -18,7 +18,7 @@
     </style>
 </head>
 <body>
-    <h1>Login</h1>
+    <h1>Iniciar Sesión</h1>
     <form>
         Usuario: <input type="text" id="usuario"><br>
         Contraseña: <input type="password" id="contrasena"><br>
@@ -27,5 +27,15 @@
     </form>
 
     <script src="login.js"></script>
+
+    <script>
+        verificarAutenticacion(); // Verificar autenticación al cargar la página
+
+        function verificarAutenticacion() {
+            if (sessionStorage.getItem('autenticado') === 'true') {
+                window.location.replace("pagina_secreta.html");
+            }
+        }
+    </script>
 </body>
 </html>
