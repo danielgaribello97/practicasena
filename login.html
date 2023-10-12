@@ -1,43 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Página Secreta</title>
+    <title>Login</title>
     <style>
         body {
-            background-color: black;
+            background-image: url('fondo.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             color: white;
         }
 
-        iframe {
-            width: 400px;
-            height: 400px;
+        input[type="text"], input[type="password"], input[type="button"] {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: black;
         }
     </style>
 </head>
 <body>
-    <script>
-        verificarAutenticacion(); // Verificar autenticación al cargar la página
+    <h1>Login</h1>
+    <form>
+        Usuario: <input type="text" id="usuario"><br>
+        Contraseña: <input type="password" id="contrasena"><br>
+        <input type="button" value="Ingresar" onclick="verificarCredenciales()">
+        <input type="button" value="Registrar Nuevo Usuario" onclick="window.location.href='registro.html'">
+    </form>
 
-        function verificarAutenticacion() {
-            if (sessionStorage.getItem('autenticado') !== 'true') {
-                alert("Debes iniciar sesión para acceder a esta página.");
-                window.location.replace("login.html");
-            }
-        }
-
-        function cerrarSesion() {
-            sessionStorage.removeItem('autenticado');
-            alert("Sesión cerrada. Debes iniciar sesión nuevamente para acceder.");
-            window.location.replace("login.html");
-        }
-    </script>
-
-    <h1>Bienvenido a la Página Secreta</h1>
-    <p>Esta es la información confidencial que solo los usuarios autorizados pueden ver.</p>
-    <a href="Que-es-el-control-de-acceso-en-ciberseguridad.pdf" download style="color: white;">Descargar PDF</a>
-    <br>
-    <iframe src="Que-es-el-control-de-acceso-en-ciberseguridad.pdf" frameborder="0"></iframe>
-
-    <input type="button" value="Cerrar Sesión" onclick="cerrarSesion()">
+    <script src="login.js"></script>
 </body>
 </html>
